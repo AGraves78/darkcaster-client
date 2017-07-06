@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 /*
  * We've enabled UglifyJSPlugin for you! This minifies your app
  * in order to load faster and run less javascript.
@@ -59,5 +60,11 @@ module.exports = {
 		]
 	},
 
-	plugins: [new UglifyJSPlugin(), new ExtractTextPlugin('style.css')]
+	plugins: [new UglifyJSPlugin(),
+						new ExtractTextPlugin('style.css'),
+						new HtmlWebpackPlugin({
+							title: 'Darkcaster',
+							filename: 'index.html',
+							template: './src/index.html'
+						})]
 };
