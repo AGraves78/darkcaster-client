@@ -6,6 +6,9 @@ function MainController(weather){
   this.imageLookup = {
     'clear-day': clearDay
   };
-  this.weatherData = weather.getCurrentWeather();
+
+  weather.getCurrentWeather(29, -81)
+         .then(currentWeather => this.weatherData = currentWeather); //is a promise
+
 }
 module.exports = MainController;

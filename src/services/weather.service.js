@@ -1,13 +1,18 @@
 const weatherData = require('../../mocks/weather.json');
-WeatherService.$inject = [];
+WeatherService.$inject = ['$http'];
 
-function WeatherService(){
+function WeatherService($http){
+  const baseUrl = 'https://lit-forest-38509.herokuapp.com/weather/'
   return {
     // label      function name
     getCurrentWeather: getCurrently
   }
-  function getCurrently(){
-    return weatherData.currently;
+  function getCurrently(lat, lon){
+    const url = `${baseUrl}${lat},${lon}`;
+    return $http.get(baseUrl)
+                .then(response => {
+                  return response.data.currently;
+                });
   }
 }
 
