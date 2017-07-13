@@ -9,7 +9,7 @@ function WeatherService($http){
   }
   function getCurrently(lat, lon){
     const url = `${baseUrl}${lat},${lon}`;
-    return $http.get(baseUrl)
+    return $http.get(url)
                 .then(response => {
                   return response.data.currently;
                 });
