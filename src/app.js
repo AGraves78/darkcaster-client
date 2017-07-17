@@ -5,8 +5,10 @@ const WeatherService = require('./services/weather.service');
 
 //Components
 const CurrentWeatherComponent = require('./components/current-weather/index');
+const HourlyWeatherComponent = require('./components/hourly-weather/index');
 
 //create our application
 angular.module('darkcaster-client', []) //setter syntax
        .factory('WeatherService', WeatherService)
-       .component('currentWeather', CurrentWeatherComponent);
+       .component('currentWeather', CurrentWeatherComponent)
+       .component('hourlyWeather', HourlyWeatherComponent);
