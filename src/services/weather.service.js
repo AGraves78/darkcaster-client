@@ -6,7 +6,19 @@ function WeatherService($http){
   return {
     // label      function name
     getCurrentWeather: getCurrently,
-    getHourlyWeather: getHourly
+    getHourlyWeather: getHourly,
+    getDailyWeather: getDaily,
+    getMinutelyWeather: getMinutely
+  }
+  function getMinutely(lat, lon){
+    const url = `${baseUrl}${lat},${lon}`;
+    return $http.get(url)
+                .then(response => response.data.minutely)
+  }
+  function getDaily(lat, lon){
+    const url = `${baseUrl}${lat},${lon}`;
+    return $http.get(url)
+                .then(response => response.data.daily);
   }
   function getHourly(lat, lon){
     const url = `${baseUrl}${lat},${lon}`;
