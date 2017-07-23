@@ -1,0 +1,32 @@
+<section>
+  <div>
+    <label>Latitude</label>
+    <input type="number" ng-model='$ctrl.lat' />
+  </div>
+  <div>
+    <label>Longitude</label>
+    <input type="number" ng-model='$ctrl.lon' />
+  </div>
+  <div>
+    <button type="button" ng-click='$ctrl.search()'>Search</button>
+  </div>
+</section>
+<section ng-if='$ctrl.dailyWeather'>
+  <h1>Summary: {{ $ctrl.weatherData.summary }}</h1>
+  <ul>
+    <li ng-repeat='day in $ctrl.dailyWeather.data'>
+      <div>
+        <header></header>
+        <main>
+          <p>{{ day.time * 1000 | date:"short" }}</p>
+          <h1>Hi: {{ day.temperatureMax | number:0 }}&deg; F</h1>
+          <h2><small>Low: {{ day.temperatureMin | number:0 }}&deg; F</small></h2>
+        </main>
+        <footer>
+          <h1>{{ day.summary }}</h1>
+        </footer>
+      </div>
+    </li>
+  </ul>
+  <pre>{{ $ctrl.dailyWeather | json }}</pre>
+</section>
