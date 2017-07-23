@@ -8,6 +8,7 @@ const ImageService = require('./services/images.service');
 const CurrentWeatherComponent = require('./components/current-weather/index');
 const HourlyWeatherComponent = require('./components/hourly-weather/index');
 const DailyWeatherComponent = require('./components/daily-weather/index');
+const MinutelyWeatherComponent = require('./components/minutely-weather/index');
 
 //create our application
 angular.module('darkcaster-client', []) //setter syntax
@@ -15,4 +16,5 @@ angular.module('darkcaster-client', []) //setter syntax
        .factory('images', ImageService)
        .component('currentWeather', CurrentWeatherComponent)
        .component('hourlyWeather', HourlyWeatherComponent)
-       .component('dailyWeather', DailyWeatherComponent);
+       .component('dailyWeather', DailyWeatherComponent)
+       .component('minutelyWeather', MinutelyWeatherComponent);
