@@ -4,7 +4,7 @@ function CurrentWeatherController(weather, images){
   this.lat = 0;
   this.lon = 0;
   this.imageLookup = images.lookup;
-  this.missingImage - images.missing;
+  this.missingImage = images.missing;
 
   //Functions
   this.search = function search(){
