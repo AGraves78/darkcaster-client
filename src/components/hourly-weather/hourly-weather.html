@@ -18,7 +18,7 @@
       <div>
         <header></header>
         <main>
-          <p>{{ hour.time * 1000| date:"short" }}</p>
+          <p>{{ hour.time * 1000 | date:"short" }}</p>
           <h1>Temperature: {{ hour.temperature | number:0 }}&deg; F</h1>
           <h2><small>Feels Like: {{ hour.apparentTemperature | number:0 }}&deg; F</small></h2>
         </main>
@@ -28,4 +28,5 @@
       </div>
     </li>
   </ul>
+  <pre>{{ $ctrl.hourlyWeather | json }}</pre>
 </section>

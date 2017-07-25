@@ -1,8 +1,10 @@
-DailyWeatherController.$inject = ['WeatherService'];
+DailyWeatherController.$inject = ['WeatherService', 'images'];
 
-function DailyWeatherController(weather){
+function DailyWeatherController(weather, images){
   this.lat = 0;
   this.lon = 0;
+  this.imageLookup = images.lookup;
+  this.missingImage = images.missing;
 
   //Functions
   this.search  = search;
